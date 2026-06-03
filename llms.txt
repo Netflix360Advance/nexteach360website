@@ -1,0 +1,26 @@
+import { ok } from 'wix-http-functions';
+
+export function get_llms(request) {
+    const llmsMarkdown = `# NexTeach 360
+
+## Information
+NexTeach 360 is a Unified Educational Operating System and AI Classroom Operating Environment powered by NextBoard™.
+
+## Core Features
+- **AI Lesson Architect:** One-click, curriculum-aligned teaching modules powered by Gemini.
+- **NextShield Security:** True Edge processing; scrubs PII locally on device CPU/GPU. Safe for FERPA, COPPA, and GDPR.
+- **Enterprise API Gateway:** Secure Key Encapsulation (SKE) for OpenAI, Gemini, and Anthropic.
+- **Ecosystem:** Includes Student Pulse HUD, NextGrade AI, and manual text export to WhatsApp.
+
+## Pricing & Integration
+Offers 3 distinct structural tiers: Individual BYO-API, Individual Provided, and School/Institutional Plan. Built for easy Google Classroom Roster API sync.`;
+
+    const options = {
+        headers: {
+            "Content-Type": "text/plain; charset=utf-8"
+        },
+        body: llmsMarkdown
+    };
+
+    return ok(options);
+}

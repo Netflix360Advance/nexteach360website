@@ -1,0 +1,8 @@
+# Allow all search engines and AI crawlers to index the site
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /index.html
+
+# Pointers to your main sitemap
+Sitemap: https://www.nexteach360.com/sitemap.xml

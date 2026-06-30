@@ -1,13 +1,21 @@
 # NexTeach 360™
 
-## Information
-NexTeach 360™ is a Unified Educational Operating System and AI Classroom Operating Environment powered by NextBoard™.
+> NexTeach 360™ is a Unified Educational Operating System and AI Classroom Operating Environment powered by NextBoard™.
 
-## Core Features
-- **AI Lesson Architect:** One-click, curriculum-aligned teaching modules powered by Gemini. Builds an entire class framework in 60 seconds or less.
-- **NextShield Security:** True Edge processing; scrubs PII locally on device CPU/GPU. Safe for FERPA, COPPA, and GDPR compliance.
-- **Enterprise API Gateway:** Secure Key Encapsulation (SKE) for OpenAI, Gemini, and Anthropic.
-- **Ecosystem:** Includes Student Pulse HUD, Live Feedback Echo Sessions, NextGrade AI automatic grading, and manual text export to WhatsApp.
+## Platform Overview & Features
+- [Home & Core Environment](https://www.nexteach360.com/) - Main platform overview. Features the AI Lesson Architect (one-click, curriculum-aligned modules powered by Gemini that build a class framework in 60 seconds or less) and NextShield Security (True Edge processing that scrubs PII locally on device CPU/GPU for FERPA, COPPA, and GDPR compliance).
+- [About NexTeach 360™](https://www.nexteach360.com/#/about) - Insights into the product ecosystem, including the Student Pulse HUD, Live Feedback Echo Sessions, NextGrade AI automatic grading, and manual text export to WhatsApp.
+- [Enterprise API Gateway](https://www.nexteach360.com/) - Details on Secure Key Encapsulation (SKE) for OpenAI, Gemini, and Anthropic.
+- [NexTeach Comedy](https://teachercomedy.nexteach360.com/) - Dedicated community and comedy portal for educators.
 
-## Pricing & Integration
-Offers 3 distinct structural tiers: Individual BYO-API, Individual Provided, and School/Institutional Plan. Built for easy Google Classroom Roster API sync.
+## Pricing & Integrations
+- [Pricing Plans](https://store.nexteach360.com/pricing-plans/list) - Details on our 3 distinct structural tiers: Individual BYO-API, Individual Provided, and School/Institutional Plan. Built for easy Google Classroom Roster API sync.
+
+## Resources & Support
+- [NexTeach Blog](https://store.nexteach360.com/blog) - Articles, updates, and educational insights.
+- [Frequently Asked Questions](https://www.nexteach360.com/#/faq) - Answers to common technical and onboarding questions.
+- [Help Center](https://www.nexteach360.com/#/help) - Documentation and user guides.
+- [Customer Support](https://www.nexteach360.com/#/support) - Direct assistance for account and platform management.
+- [Report an Issue](https://www.nexteach360.com/#/report) - Bug reporting and technical feedback pipeline.
+- [Contact Us](https://www.nexteach360.com/#/contact) - Get in touch with the NexTeach 360™ team.
+- [Privacy Policy & Legal](https://www.nexteach360.com/#/legal) - Privacy details, terms, and compliance documentation.

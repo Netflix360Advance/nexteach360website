@@ -148,54 +148,19 @@
     <link rel="stylesheet" crossorigin href="./assets/index-fScmF0av.css">
   </head>
   <body>
-    <!-- SEO FALLBACK FOR BOTS - OUTSIDE #root - THIS IS THE FIX -->
-    <div id="seo-fallback">
-      <header>
-        <h1>NexTeach 360™ featuring NextBoard™</h1>
-        <p><strong>100% Google Workspace-Native AI Classroom Operating System for K-12 Teachers</strong></p>
-        <nav>
-          <a href="https://workspace.google.com/marketplace/app/nexteach_360/892953541183">Google Workspace Marketplace</a> | 
-          <a href="https://store.nexteach360.com/pricing-plans/list">Pricing & Institutional Tiers</a> | 
-          <a href="https://www.linkedin.com/company/nexteach360/">LinkedIn Company</a> | 
-          <a href="https://www.linkedin.com/in/miguel-cabezas/">Founder: Miguel Cabezas</a>
-        </nav>
-      </header>
-      <main>
-        <section>
-          <h2>About NexTeach 360™ & NextBoard™</h2>
-          <p>NexTeach 360™ is an AI-powered K-12 education platform built natively for Google Classroom and Google Workspace. Streamline lesson creation, AI paper grading, student telemetry, and multilingual parent communication with client-side PII tokenization for full FERPA and COPPA compliance.</p>
-          <p>Built for teachers: NextBoard™ AI Lesson Architect generates curriculum-aligned modules in 60 seconds, NextGrade™ automates rubric-based grading with OCR, and NextShield™ scrubs PII locally on device CPU/GPU.</p>
-        </section>
-        <section>
-          <h2>Live Product & Verification Links</h2>
-          <ul>
-            <li>Official Website: https://www.nexteach360.com/</li>
-            <li>Install via Google Workspace Marketplace: https://workspace.google.com/marketplace/app/nexteach_360/892953541183</li>
-            <li>Institutional Pricing: https://store.nexteach360.com/pricing-plans/list</li>
-            <li>Contact: help@nexteach360.com | privacy@nexteach360.com</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Founder & Executive Leadership</h2>
-          <p><strong>Founder & CEO:</strong> Miguel Cabezas. Verifiable publisher on Google Workspace Marketplace and LinkedIn.</p>
-        </section>
-      </main>
-      <footer><p>© 2026 NexTeach 360™. Google Workspace and Google Classroom are trademarks of Google LLC.</p></footer>
-    </div>
+    <!-- FIXED: SEO content ONLY inside noscript - invisible to humans, visible to Google verification bot -->
+    <noscript>
+      <div style="font-family:system-ui,sans-serif;max-width:800px;margin:0 auto;padding:40px;line-height:1.7;color:#111">
+        <h1>NexTeach 360™ featuring NextBoard™ - Google Workspace-Native AI Operating System for K-12 Teachers</h1>
+        <p><strong>100% Google Workspace-Native | FERPA & COPPA Compliant | Built for Google Classroom</strong></p>
+        <p>NexTeach 360™ is an AI-powered K-12 education platform built natively for Google Classroom and Google Workspace. Streamline lesson creation, AI paper grading, student telemetry, and multilingual parent communication with client-side PII tokenization for full FERPA and COPPA compliance.</p>
+        <p>Products: NextBoard™ AI Lesson Architect (60-second curriculum modules), NextGrade™ AI GradingStation with OCR, NextShield™ local PII scrubbing.</p>
+        <p>Live Links: <a href="https://workspace.google.com/marketplace/app/nexteach_360/892953541183">Google Workspace Marketplace</a> | <a href="https://store.nexteach360.com/pricing-plans/list">Pricing</a> | Founder: Miguel Cabezas <a href="https://www.linkedin.com/in/miguel-cabezas/">LinkedIn</a> | Contact: help@nexteach360.com</p>
+        <p>© 2026 NexTeach 360™</p>
+      </div>
+    </noscript>
 
-    <!-- REACT APP ROOT -->
+    <!-- REACT APP ROOT - Your app will render here for humans -->
     <div id="root"></div>
-
-    <script>
-      // Hide fallback after React loads so users see your app, bots see the static content
-      window.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-          const root = document.getElementById('root');
-          if (root && root.children.length > 0) {
-            document.body.classList.add('js-loaded');
-          }
-        }, 1200);
-      });
-    </script>
   </body>
 </html>

@@ -4,5 +4,18 @@ Allow: /
 Allow: /llms.txt
 Allow: /index.html
 
-# Pointers to your main sitemap
+# Specific AI Crawlers Access
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Core Metadata
 Sitemap: https://www.nexteach360.com/sitemap.xml

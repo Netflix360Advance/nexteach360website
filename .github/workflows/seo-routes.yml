@@ -1,0 +1,134 @@
+name: Generate Static Route HTMLs with Unique SEO Metadata
+
+on:
+  push:
+    branches: [ main ] # Change to 'master' if your default branch is master
+
+permissions:
+  contents: write
+
+jobs:
+  generate-routes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create route index.html files with custom SEO metadata
+        run: |
+          node -e '
+            const fs = require("fs");
+            const path = require("path");
+
+            const sitemap = fs.readFileSync("sitemap.xml", "utf8");
+            const baseHtml = fs.readFileSync("index.html", "utf8");
+
+            // Custom SEO metadata per route (tailored from your llms.txt & site content)
+            const routeMeta = {
+              "about": {
+                title: "About NexTeach 360™ | AI Classroom Operating Environment & NextBoard™",
+                description: "Learn how NexTeach 360™ unifies lesson creation, Student Pulse HUD, Live Feedback Echo Sessions, and NextGrade™ AI grading inside Google Workspace."
+              },
+              "autonomous-agent": {
+                title: "Autonomous AI Teaching Agent | NexTeach 360™ Lesson Architect",
+                description: "Build curriculum-aligned K-12 lesson modules in 60 seconds or less with NexTeach 360™ AI Lesson Architect powered by Gemini and protected by NextShield™."
+              },
+              "built-for-google-classroom": {
+                title: "Built for Google Classroom & Workspace | NexTeach 360™",
+                description: "100% Google Workspace-native AI OS with seamless Google Classroom Roster API sync, OCR paper grading, and FERPA/COPPA-compliant local PII scrubbing."
+              },
+              "plans": {
+                title: "Pricing & Plans | NexTeach 360™ for Individual Teachers & Schools",
+                description: "Explore NexTeach 360™ plans: $99 Lifetime BYO-API license, $14.99/mo all-inclusive NextBoard™ VP subscription, and custom School/Institutional licensing."
+              },
+              "faq": {
+                title: "Frequently Asked Questions (FAQ) | NexTeach 360™",
+                description: "Answers to common questions about NexTeach 360™ setup, Google Classroom integration, BYO-API keys, FERPA/COPPA privacy, and school onboarding."
+              },
+              "blog": {
+                title: "NexTeach 360™ Blog | AI in K-12 Education & Classroom Workflows",
+                description: "Read the latest updates, teaching strategies, product releases, and AI classroom insights from the NexTeach 360™ team."
+              },
+              "help": {
+                title: "Help Center & Documentation | NexTeach 360™",
+                description: "Step-by-step guides, tutorials, and documentation for NextBoard™, AI GradingStation, NextShield™ security, and Google Workspace setup."
+              },
+              "support": {
+                title: "Customer Support | NexTeach 360™ Educator Assistance",
+                description: "Get direct technical and account support for NexTeach 360™, licensing, API configuration, and school district deployments."
+              },
+              "report": {
+                title: "Report an Issue or Bug | NexTeach 360™ Technical Feedback",
+                description: "Submit bug reports, technical issues, or feature feedback directly to the NexTeach 360™ engineering team."
+              },
+              "legal": {
+                title: "Privacy Policy, Terms & FERPA/COPPA Compliance | NexTeach 360™",
+                description: "Review NexTeach 360™ privacy policies, terms of service, and client-side PII tokenization standards for FERPA, COPPA, and GDPR compliance."
+              },
+              "contact": {
+                title: "Contact Us | NexTeach 360™ Team & School Inquiries",
+                description: "Get in touch with NexTeach 360™ for school district demos, institutional licensing, partnerships, or educator support."
+              },
+              "founder-bio": {
+                title: "Founder Bio: Miguel Cabezas | Vision Behind NexTeach 360™",
+                description: "Meet Miguel Cabezas, founder of NexTeach 360™, and explore the vision behind building a privacy-first, Google Workspace-native AI OS for K-12 teachers."
+              }
+            };
+
+            // Helper to safely escape HTML attribute values
+            const escapeAttr = (str) => str.replace(/"/g, "&quot;");
+
+            // Extract all <loc> URLs from sitemap.xml
+            const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1].trim());
+
+            for (const fullUrl of urls) {
+              const urlObj = new URL(fullUrl);
+              const routePath = urlObj.pathname.replace(/^\/|\/$/g, "");
+
+              // Skip root homepage since root index.html already exists
+              if (!routePath) continue;
+
+              // Fallback title/description if you add a new URL to sitemap.xml later
+              const fallbackName = routePath
+                .split("-")
+                .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+                .join(" ");
+
+              const meta = routeMeta[routePath] || {
+                title: `${fallbackName} | NexTeach 360™`,
+                description: `Explore ${fallbackName} on NexTeach 360™ — the 100% Google Workspace-native AI operating system for K-12 teachers.`
+              };
+
+              const safeTitle = escapeAttr(meta.title);
+              const safeDesc = escapeAttr(meta.description);
+
+              let routeHtml = baseHtml
+                // 1. Update <title> and <meta name="title">
+                .replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}<\/title>`)
+                .replace(/<meta name="title" content="[^"]*"\s*\/?>/, `<meta name="title" content="${safeTitle}" />`)
+                // 2. Update <meta name="description">
+                .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${safeDesc}" />`)
+                // 3. Update canonical URL
+                .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${fullUrl}" />`)
+                // 4. Update Open Graph tags
+                .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${fullUrl}" />`)
+                .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${safeTitle}" />`)
+                .replace(/<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${safeDesc}" />`)
+                // 5. Update Twitter Card tags
+                .replace(/<meta name="twitter:url" content="[^"]*"\s*\/?>/, `<meta name="twitter:url" content="${fullUrl}" />`)
+                .replace(/<meta name="twitter:title" content="[^"]*"\s*\/?>/, `<meta name="twitter:title" content="${safeTitle}" />`)
+                .replace(/<meta name="twitter:description" content="[^"]*"\s*\/?>/, `<meta name="twitter:description" content="${safeDesc}" />`);
+
+              fs.mkdirSync(routePath, { recursive: true });
+              fs.writeFileSync(path.join(routePath, "index.html"), routeHtml);
+              console.log(`Generated ${routePath}/index.html -> "${meta.title}"`);
+            }
+          '
+
+      - name: Commit and push generated route folders
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "Auto-generate static route HTMLs with unique SEO metadata"
+          git push

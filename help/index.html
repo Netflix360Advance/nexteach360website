@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- GitHub Pages SPA Path Resolver Script (MUST be placed before JS bundle) -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="https://www.nexteach360.com/assets/images/nexteach360.png" />
+    <link rel="apple-touch-icon" href="https://www.nexteach360.com/assets/images/nexteach360.png" />
+
+    <!-- Primary Meta Tags -->
+    <title>Help Center & Documentation | NexTeach 360™</title>
+    <meta name="title" content="Help Center & Documentation | NexTeach 360™" />
+    <meta name="description" content="Step-by-step guides, tutorials, and documentation for NextBoard™, AI GradingStation, NextShield™ security, and Google Workspace setup." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.nexteach360.com/help" />
+    <meta name="google-site-verification" content="Rexy0JPwv6IfqHV05mzf8nbXweFJ3OwxaSGJTGLHWMk" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.nexteach360.com/help" />
+    <meta property="og:title" content="Help Center & Documentation | NexTeach 360™" />
+    <meta property="og:description" content="Step-by-step guides, tutorials, and documentation for NextBoard™, AI GradingStation, NextShield™ security, and Google Workspace setup." />
+    <meta property="og:image" content="https://www.nexteach360.com/assets/images/nexteach360.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.nexteach360.com/help" />
+    <meta name="twitter:title" content="Help Center & Documentation | NexTeach 360™" />
+    <meta name="twitter:description" content="Step-by-step guides, tutorials, and documentation for NextBoard™, AI GradingStation, NextShield™ security, and Google Workspace setup." />
+    <meta name="twitter:image" content="https://www.nexteach360.com/assets/images/nexteach360.png" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Organization", "EducationalOrganization"],
+          "@id": "https://www.nexteach360.com/#organization",
+          "name": "NexTeach 360™",
+          "url": "https://www.nexteach360.com/",
+          "logo": "https://www.nexteach360.com/assets/images/nexteach360.png",
+          "description": "NexTeach 360™ is a 100% Google Workspace-native AI operating system for K-12 educators, automating lesson planning, paper grading, and classroom workflows while ensuring strict FERPA and COPPA compliance.",
+          "sameAs": [
+            "https://www.instagram.com/nexteach360",
+            "https://www.linkedin.com/company/nexteach360",
+            "https://www.crunchbase.com/organization/nexteach360",
+            "https://www.producthunt.com/products/nexteach-360"
+          ],
+          "knowsAbout": [
+            "Artificial intelligence in education",
+            "Google Classroom integration",
+            "FERPA and COPPA compliance",
+            "Lesson planning software",
+            "Automated paper grading",
+            "Multilingual instruction"
+          ],
+          "educationalRole": [
+            "teacher",
+            "educator",
+            "school administrator",
+            "instructional technology director"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.nexteach360.com/#website",
+          "url": "https://www.nexteach360.com/",
+          "name": "NexTeach 360™",
+          "publisher": { "@id": "https://www.nexteach360.com/#organization" },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.nexteach360.com/#homepage",
+          "url": "https://www.nexteach360.com/",
+          "name": "NexTeach 360™ | Google Workspace-Native AI Operating System for K-12",
+          "description": "NexTeach 360™ is an AI-powered K-12 education platform built natively for Google Classroom and Google Workspace. Streamline lesson creation, AI grading, and parent communication with zero tab-switching.",
+          "isPartOf": { "@id": "https://www.nexteach360.com/#website" },
+          "about": { "@id": "https://www.nexteach360.com/#software" },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.nexteach360.com/assets/images/nexteach360.png"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.nexteach360.com/#software",
+          "name": "NexTeach 360™",
+          "applicationCategory": "EducationalApplication",
+          "applicationSubCategory": "AI-powered classroom operating system",
+          "operatingSystem": "Web",
+          "url": "https://www.nexteach360.com/",
+          "publisher": { "@id": "https://www.nexteach360.com/#organization" },
+          "keywords": [
+            "Google Classroom AI tools",
+            "FERPA compliant teacher AI",
+            "education technology SaaS",
+            "lesson planning software",
+            "AI GradingStation",
+            "multilingual teaching platform"
+          ],
+          "description": "NexTeach 360™ is a 100% Google Workspace-native classroom AI operating system. It helps teachers create lesson plans, grade assignments, and manage multilingual instruction directly within Google Classroom—backed by client-side PII anonymization for full FERPA/COPPA compliance.",
+          "audience": {
+            "@type": "EducationalAudience",
+            "educationalRole": ["teacher", "educator", "school administrator", "network administrator"]
+          },
+          "educationalUse": ["lesson planning", "classroom instruction", "automated assessment and grading", "multilingual education"],
+          "featureList": [
+            "100% Google Workspace & Google Classroom Integration",
+            "NextBoard™ Interactive Lesson Planning Suite",
+            "AI GradingStation with OCR Paper Evaluation",
+            "Client-Side PII Tokenization for FERPA & COPPA Compliance",
+            "Multilingual Parent Communication Generator"
+          ],
+          "isAccessibleForFree": false,
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "NT360™ - Individual Teacher",
+              "description": "Lifetime license. Plug in your own API keys (OpenAI, Anthropic, Google). Pay your provider directly.",
+              "url": "https://buy.stripe.com/3cIdR85jj0hZapnbqA4wM00",
+              "price": "99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "priceValidUntil": "2026-12-31"
+            },
+            {
+              "@type": "Offer",
+              "name": "NT360™ - NextBoard Individual Teacher VP",
+              "description": "All-inclusive subscription. NexTeach 360™ manages infrastructure and absorbs all token and processing costs.",
+              "url": "https://buy.stripe.com/4gM8wO7rre8P40Z3Y84wM01",
+              "price": "14.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "priceValidUntil": "2026-12-31"
+            }
+          ],
+          "hasPart": [
+            { "@type": "SoftwareApplication", "name": "NextBoard™", "description": "Interactive Google-native whiteboard, AI-assisted lesson creation, and classroom planning suite" },
+            { "@type": "SoftwareApplication", "name": "AI GradingStation", "description": "Automated rubric generator, paper OCR grading, and FERPA-compliant student evaluation tool" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.nexteach360.com/#breadcrumb",
+          "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nexteach360.com/" }]
+        }
+      ]
+    }
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-CVmLfKlH.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CCFx2z-G.css">
+  </head>
+  <body>
+    <noscript>
+      <div style="font-family:system-ui,sans-serif;max-width:800px;margin:0 auto;padding:40px;line-height:1.7;color:#111">
+        <h1>NexTeach 360™ featuring NextBoard™ - Google Workspace-Native AI Operating System for K-12 Teachers</h1>
+        <p><strong>100% Google Workspace-Native | FERPA & COPPA Compliant | Built for Google Classroom</strong></p>
+        <p>NexTeach 360™ is an AI-powered K-12 education platform built natively for Google Classroom and Google Workspace. Streamline lesson creation, AI paper grading, student telemetry, and multilingual parent communication with client-side PII tokenization for full FERPA and COPPA compliance.</p>
+        <p>Products: NextBoard™ AI Lesson Architect (60-second curriculum modules), NextGrade™ AI GradingStation with OCR, NextShield™ local PII scrubbing.</p>
+        <p>Live Links: <a href="https://workspace.google.com/marketplace/app/nexteach_360/11621424832">Google Workspace Marketplace</a> | <a href="https://www.nexteach360.com/plans">Pricing</a> | Founder: Miguel Cabezas <a href="https://www.linkedin.com/in/miguel-cabezas/">LinkedIn</a> | Contact: miguelcabezas@nexteach360.com </p>
+        <p>© 2026 NexTeach 360™</p>
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+  </body>
+</html>
